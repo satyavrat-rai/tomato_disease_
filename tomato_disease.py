@@ -14,7 +14,7 @@ class_names = ['Tomato_Bacterial_spot', 'Tomato_Early_blight', 'Tomato_Late_blig
 
 st.title("Tomato Disease Predictiion")
 
-uploaded_file = st.file_uploader("Upload a tomato image : ", type = ["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload a tomato's leaf image : ", type = ["jpg", "jpeg", "png"])
 
 if uploaded_file is not None : 
     image = Image.open(uploaded_file).convert('RGB')
@@ -30,6 +30,7 @@ if uploaded_file is not None :
     predicted_class = class_names[np.argmax(prediction)]
 
     st.write(f"**Prediction:** {predicted_class}")
+
 
 
 
